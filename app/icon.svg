@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <defs>
+    <linearGradient id="decGrad" x1="2" y1="2" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8B5CF6" />
+      <stop offset="50%" stop-color="#7C3AED" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#decGrad)" />
+  
+  <!-- Scale fulcrum / center post -->
+  <rect x="15" y="7" width="2" height="18" rx="1" fill="#FFFFFF" />
+  <circle cx="16" cy="7" r="2" fill="#FDE047" />
+  <rect x="11" y="24" width="10" height="2" rx="1" fill="#FFFFFF" />
+
+  <!-- Scale balance beam -->
+  <path d="M7 11L25 11" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Left scale pan -->
+  <line x1="8" y1="11" x2="6" y2="17" stroke="#DDD6FE" stroke-width="1.2" />
+  <line x1="8" y1="11" x2="10" y2="17" stroke="#DDD6FE" stroke-width="1.2" />
+  <path d="M5 17C5 18.6569 6.34315 20 8 20C9.65685 20 11 18.6569 11 17H5Z" fill="#FDE047" />
+
+  <!-- Right scale pan (weighing heavier / winner) -->
+  <line x1="24" y1="11" x2="22" y2="18" stroke="#DDD6FE" stroke-width="1.2" />
+  <line x1="24" y1="11" x2="26" y2="18" stroke="#DDD6FE" stroke-width="1.2" />
+  <path d="M21 18C21 19.6569 22.3431 21 24 21C25.6569 21 27 19.6569 27 18H21Z" fill="#38BDF8" />
+</svg>
