@@ -1,2 +1,117 @@
 @import "tailwindcss";
-* { box-sizing: border-box; }
+
+@theme {
+  --color-paper: #f4f6ec;
+  --color-paper-raised: #fbfcf6;
+  --color-ink: #2a2822;
+  --color-ink-soft: #5c5a4d;
+  --color-ink-faint: #8a8874;
+  --color-line: #d9dcc6;
+  --color-line-soft: #e7e9da;
+  --color-amber: #d98f2b;
+  --color-amber-ink: #8a5a1a;
+  --color-amber-soft: #f1e0bb;
+  --color-rust: #a24a35;
+  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  background-image:
+    linear-gradient(var(--color-line-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-line-soft) 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-position: -1px -1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Visible focus ring everywhere, independent of Tailwind utility ordering. */
+:focus-visible {
+  outline: 2px solid var(--color-amber-ink);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Weight slider — ticked like a scale, not a generic pill track. */
+.weight-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--color-ink-faint) 0,
+      var(--color-ink-faint) 1px,
+      transparent 1px,
+      transparent 11.11%
+    ),
+    var(--color-line-soft);
+  outline-offset: 4px;
+}
+
+.weight-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 20px;
+  border-radius: 3px;
+  background: var(--color-amber);
+  border: 2px solid var(--color-paper-raised);
+  box-shadow: 0 1px 2px rgba(42, 40, 34, 0.35);
+  cursor: pointer;
+  margin-top: -7px;
+}
+
+.weight-slider::-moz-range-thumb {
+  width: 16px;
+  height: 20px;
+  border-radius: 3px;
+  background: var(--color-amber);
+  border: 2px solid var(--color-paper-raised);
+  box-shadow: 0 1px 2px rgba(42, 40, 34, 0.35);
+  cursor: pointer;
+}
+
+.weight-slider::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 3px;
+}
+
+.weight-slider::-moz-range-track {
+  height: 6px;
+  border-radius: 3px;
+  background: transparent;
+}
+
+/* A washi-tape corner accent used on panel headers to break the "rounded card" convention. */
+.tape::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 18px;
+  width: 46px;
+  height: 16px;
+  background: var(--color-amber-soft);
+  opacity: 0.9;
+  transform: rotate(-3deg);
+  box-shadow: 0 1px 1px rgba(42, 40, 34, 0.12);
+}
